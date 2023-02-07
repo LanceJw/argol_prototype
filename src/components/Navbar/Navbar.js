@@ -60,7 +60,7 @@ const Navbar = () => {
                     <a href='#'><Logo src={Argol_Logo} alt='Argol Logo' /></a>
                     <Links>Home</Links>
                     <Links>About Us</Links>
-                    <Links>Products</Links>
+                    <Links href='/products'>Products</Links>
                     <Links>Contact Us</Links>
                 </Left>
                 <Right>

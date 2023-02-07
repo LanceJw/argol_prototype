@@ -1,6 +1,5 @@
-import React, {useContext, useState} from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import { ProductContext } from '../../Context/ProductContext'
 
 
 const Data = [
@@ -15,16 +14,11 @@ const Data = [
 ]
 
 const ProductPage = () => {
-    const {currentRange} = useContext(ProductContext)
-
-    const displayData = Data.filter(test => test.range === currentRange)
-
-    console.log(currentRange)
-    console.log(displayData)
+    // const displayData = Data.filter(test => test.range === currentRange)
         
     return (
         <div>
-            {displayData.map((data) => {
+            {Data.map((data) => {
                 return (
                     <h1>{data.text}</h1>
                 )
