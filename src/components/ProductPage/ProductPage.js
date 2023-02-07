@@ -1,24 +1,49 @@
 import React from 'react'
-import styled from 'styled-components'
 
 
 const Data = [
+    {
+        range: 'ContractorGrade',
+        text: 'This is ContractorGrade'
+    },
     {
         range: 'DeLuxe',
         text: 'This is DeLuxe'
     },
     {
+        range: 'Classic',
+        text: 'This is Classic'
+    },
+    {
+        range: 'JobMaster',
+        text: 'This is JobMaster'
+    },
+    {
         range: 'WorkMaster',
         text: 'This is WorkMaster'
-    }
+    },
+    {
+        range: 'TaskMaster',
+        text: 'This is TaskMaster'
+    },
+    {
+        range: 'AllMaster',
+        text: 'This is AllMaster'
+    },
 ]
 
 const ProductPage = () => {
-    // const displayData = Data.filter(test => test.range === currentRange)
-        
+
+    const selectedRange = localStorage.getItem('selected-range')
+
+    const displayData = Data.filter(range => range.range === selectedRange) 
+    
+    console.log(selectedRange)
+    console.log(displayData)
+
     return (
         <div>
-            {Data.map((data) => {
+            {displayData.map((data) => {
                 return (
                     <h1>{data.text}</h1>
                 )

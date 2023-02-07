@@ -14,7 +14,7 @@ import Argol_Logo from '../../assets/Navbar/Logo.png'
 const Container = styled.div`
 display: flex;
 width: 100%;
-height: 100px;
+height: 120px;
 align-items: center;
 `
 
@@ -57,11 +57,11 @@ const Navbar = () => {
         <Container>
             <NavigationBar>
                 <Left>
-                    <a href='#'><Logo src={Argol_Logo} alt='Argol Logo' /></a>
-                    <Links>Home</Links>
-                    <Links>About Us</Links>
+                    <a href='/'><Logo src={Argol_Logo} alt='Argol Logo' /></a>
+                    <Links href='/'>Home</Links>
+                    <Links href='/'>About Us</Links>
                     <Links href='/products'>Products</Links>
-                    <Links>Contact Us</Links>
+                    <Links href='/'>Contact Us</Links>
                 </Left>
                 <Right>
                     <FontAwesomeIcon icon={faMessage} style={{fontSize: '19px'}} />

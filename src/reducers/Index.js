@@ -12,12 +12,15 @@
 //  <any name we want> : isLoggedReducer
 // })
 
-import { combineReducers } from "redux";
-import rangeReducer from "./rangeReducer";
+
+// Actual Working code vv
+
+// import { combineReducers } from "redux";
+// import rangeReducer from "./rangeReducer";
 
 
-const allReducers = combineReducers({
-    range: rangeReducer
-})
+// const allReducers = combineReducers({
+//     range: rangeReducer
+// })
 
-export default allReducers
+// export default allReducers
