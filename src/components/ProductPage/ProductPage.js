@@ -1,54 +1,61 @@
-import React from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
+import styled from 'styled-components'
+
+import Navbar from '../Navbar/Navbar'
+import { Product_Data } from './Product_Data'
+import { Range_Data } from '../LandingPage/Range_Data'
 
 
-const Data = [
-    {
-        range: 'ContractorGrade',
-        text: 'This is ContractorGrade'
-    },
-    {
-        range: 'DeLuxe',
-        text: 'This is DeLuxe'
-    },
-    {
-        range: 'Classic',
-        text: 'This is Classic'
-    },
-    {
-        range: 'JobMaster',
-        text: 'This is JobMaster'
-    },
-    {
-        range: 'WorkMaster',
-        text: 'This is WorkMaster'
-    },
-    {
-        range: 'TaskMaster',
-        text: 'This is TaskMaster'
-    },
-    {
-        range: 'AllMaster',
-        text: 'This is AllMaster'
-    },
-]
+
+const Container = styled.div`
+
+`
+
+const Filter = styled.div`
+display: flex;
+flex-direction: row;
+width: 70%;
+margin: auto;
+justify-content: space-between;
+`
+
+
 
 const ProductPage = () => {
 
-    const selectedRange = localStorage.getItem('selected-range')
+    const [displayedData, setDisplayedData] = useState(Product_Data.filter(range => range.range === 'DeLuxe'))
 
-    const displayData = Data.filter(range => range.range === selectedRange) 
-    
-    console.log(selectedRange)
-    console.log(displayData)
+    useEffect(() => {
+        const selectedRange = localStorage.getItem('selected-range')
+        setDisplayedData(Product_Data.filter(range => range.range === selectedRange))
+    }, [])
 
     return (
-        <div>
-            {displayData.map((data) => {
-                return (
-                    <h1>{data.text}</h1>
-                )
-            })}
-        </div>
+        <Fragment>
+            <Navbar/>
+            <Container>
+                {/* Filter Area */}
+                <Filter>
+                    {Range_Data.map((data) => {
+                        return (
+                            <p onClick={() => {
+                                localStorage.setItem('selected-range', data.id)
+                                setDisplayedData(Product_Data.filter(range => range.range === data.id))
+                                console.log(displayedData)
+                            }}>{data.range}</p>
+                        )
+                    })}
+                </Filter>
+
+                {/* Display product area */}
+                {displayedData.map((data) => {
+                    return (
+                        <p>{data.model}</p>
+                    )
+                })}    
+                
+            </Container>
+        </Fragment>
     )
 }
 

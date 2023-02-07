@@ -60,7 +60,9 @@ const Navbar = () => {
                     <a href='/'><Logo src={Argol_Logo} alt='Argol Logo' /></a>
                     <Links href='/'>Home</Links>
                     <Links href='/'>About Us</Links>
-                    <Links href='/products'>Products</Links>
+                    <Links href='/products' onClick={() => {
+                        localStorage.setItem('selected-range', 'DeLuxe')
+                    }}>Products</Links>
                     <Links href='/'>Contact Us</Links>
                 </Left>
                 <Right>
