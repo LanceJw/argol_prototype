@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import Navbar from '../Navbar/Navbar'
 
-
 // React Redux Imports
 // import { useSelector, useDispatch} from 'react-redux'
 // import { DeLuxeRange, ClassicRange, JobMasterRange, WorkMasterRange, TaskMasterRange, AllMasterRange, ContractorGradeRange } from '../../actions/Index'
@@ -13,10 +12,19 @@ import { Range_Data } from './Range_Data'
 
 
 const Container = styled.div`
-
+position: relative;
 `
 
+const Content = styled.div`
+width: 100%;
+background-image: url(/BackgroundDesign.png);
+background-size: cover;
+height: 75vh;
+`
+
+
 const RangeContainer = styled.div`
+position: relative;
 display: flex;
 flex-direction: column;
 gap: 12px;
@@ -35,6 +43,12 @@ text-decoration: none;
 color: white;
 font-weight: 600;
 `
+
+// const BackgroundImage = styled.img`
+// position: absolute;
+// height: 90vh;
+// width: 100%;
+// `
 
 
 const LandingPage = () => {
@@ -68,18 +82,21 @@ const LandingPage = () => {
     return (
         <Container>
             <Navbar/>
-            <RangeContainer>
-                {Range_Data.map((data) => {
-                    return (
-                            <Range href='/products' key={data.id} 
-                            style={{backgroundColor: data.backgroundColor, color: data.color}}
-                            onClick={() => {
-                                // handler(data)
-                                localStorage.setItem('selected-range', data.id)
-                            }}>{data.range}</Range>
-                            )
-                        })}
-            </RangeContainer>
+            {/* <BackgroundImage src={BackgroundDesign}/>    */}
+            <Content>
+                <RangeContainer>
+                    {Range_Data.map((data) => {
+                        return (
+                                <Range href='/products' key={data.id} 
+                                style={{backgroundColor: data.backgroundColor, color: data.color}}
+                                onClick={() => {
+                                    // handler(data)
+                                    localStorage.setItem('selected-range', data.id)
+                                }}>{data.range}</Range>
+                                )
+                            })}
+                </RangeContainer>
+            </Content>
         </Container>
     )   
 }
