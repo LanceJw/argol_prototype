@@ -14,13 +14,14 @@ import Argol_Logo from '../../assets/Navbar/Logo.png'
 const Container = styled.div`
 display: flex;
 width: 100%;
-height: 120px;
+height: 100px;
 align-items: center;
+background-color: white;
 `
 
 const NavigationBar = styled.div`
 max-width: 1100px;
-width: 75%;
+width: 100%;
 margin: auto;
 display: flex;
 flex-direction: row;
@@ -37,7 +38,7 @@ align-items: center;
 `
 
 const Logo = styled.img`
-width: 100px;
+width: 90px;
 margin-right: 15px;
 `
 

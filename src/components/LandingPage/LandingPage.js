@@ -1,6 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import {BsDot} from 'react-icons/bs'
+
 import Navbar from '../Navbar/Navbar'
+import Furst from '../../assets/FurstLogo.png'
 
 // React Redux Imports
 // import { useSelector, useDispatch} from 'react-redux'
@@ -12,31 +15,28 @@ import { Range_Data } from './Range_Data'
 
 
 const Container = styled.div`
+height: 100vh;
 position: relative;
-`
-
-const Content = styled.div`
-width: 100%;
 background-image: url(/BackgroundDesign.png);
 background-size: cover;
-height: 75vh;
+background-repeat: no-repeat;
+background-position: center;
 `
-
 
 const RangeContainer = styled.div`
 position: relative;
 display: flex;
 flex-direction: column;
 gap: 12px;
-width: 75%;
+width: 60%;
 max-width: 1100px;
-margin: 2rem auto 0rem;
+margin: 1.5rem auto 0rem;
 `
 
 const Range = styled.a`
 padding: 8px 12px;
 background-color: red;
-width: 10%;
+width: 16%;
 text-align: center;
 border-radius: 8px;
 text-decoration: none;
@@ -44,12 +44,26 @@ color: white;
 font-weight: 600;
 `
 
-// const BackgroundImage = styled.img`
-// position: absolute;
-// height: 90vh;
-// width: 100%;
-// `
+const Quote = styled.div`
+text-align: center;
+margin-top: 2rem;
+font-size: 24px;
+letter-spacing: 1px;
+font-weight: 600;
+`
 
+const Categories = styled.div`
+margin-top: 0.5rem;
+text-align: center;
+font-size: 21px;
+font-weight: 500;
+letter-spacing: 1px;
+`
+
+const FurstLogo = styled.img`
+width: 16%;
+margin-left: 10px;
+`
 
 const LandingPage = () => {
 
@@ -82,21 +96,25 @@ const LandingPage = () => {
     return (
         <Container>
             <Navbar/>
-            {/* <BackgroundImage src={BackgroundDesign}/>    */}
-            <Content>
-                <RangeContainer>
-                    {Range_Data.map((data) => {
-                        return (
-                                <Range href='/products' key={data.id} 
-                                style={{backgroundColor: data.backgroundColor, color: data.color}}
-                                onClick={() => {
-                                    // handler(data)
-                                    localStorage.setItem('selected-range', data.id)
-                                }}>{data.range}</Range>
-                                )
-                            })}
-                </RangeContainer>
-            </Content>
+            <Quote>
+                <span>Before You Start, Think Of The Finish</span>
+            </Quote>
+            <RangeContainer>
+                {Range_Data.map((data) => {
+                    return (
+                            <Range href='/products' key={data.id} 
+                            style={{backgroundColor: data.backgroundColor, color: data.color}}
+                            onClick={() => {
+                                // handler(data)
+                                localStorage.setItem('selected-range', data.id)
+                            }}>{data.range}</Range>
+                            )
+                        })}
+                <FurstLogo src={Furst} alt="Furst Logo "/>
+            </RangeContainer>
+            <Categories>
+                <span>Paint Brushes <BsDot style={{verticalAlign: 'bottom'}}/> Paint Rollers <BsDot style={{verticalAlign: 'bottom'}}/> Painting Tools</span>
+            </Categories>
         </Container>
     )   
 }
