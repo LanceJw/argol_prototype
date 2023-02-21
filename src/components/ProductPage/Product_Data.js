@@ -20,7 +20,8 @@ export const Product_Data = [
         sizing: [
             {
                 catNo: "67 113",
-                size: "1/2",
+                fracSize: true,
+                size: '1\u00BD "',
                 quantity: "12 doz",
                 background_color: "#ffffff"
             },

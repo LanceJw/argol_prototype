@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { BsDot } from 'react-icons/bs'
+
 
 const Container = styled.div`
 width: 70%;
@@ -33,7 +34,7 @@ width: 55%;
 `
 
 const Description = styled.div`
-width: 38%;
+width: 40%;
 padding-top: 2rem;
 `
 
@@ -47,7 +48,7 @@ height: 110px
 
 const Sizing = styled.table`
 width: 100%;
-height: 45%;
+height: 50%;
 text-align: center;
 justify-self: auto;
 border-spacing: 0px;
@@ -58,14 +59,18 @@ border: 2px solid black;
 
 const style = {
     tableHead: {
-
+        backgroundColor: '#aaddef',
+        height: '30px'
     },
-    tableBody: {
-        border: '1px solid black'
-    }
 }
 
+
 const Product = (props) => {
+
+    useEffect(() => {
+        document.title = 'Argol & Company Pte Ltd | Products'
+    }, [])
+
     return (
         <Container>
             <Header>
@@ -91,8 +96,8 @@ const Product = (props) => {
                     <Sizing>
                         <thead style={style.tableHead}>
                             <tr>
-                                <th style={{ border: '1px solid black' }}>Cat No.</th>
-                                <th style={{ border: '1px solid black' }}>Size</th>
+                                <th style={{ border: '1px solid black', width: '30%' }}>Cat No.</th>
+                                <th style={{ border: '1px solid black', width: '20%'}}>Size</th>
                                 <th>Quantity / Carton</th>
                             </tr>
                         </thead>

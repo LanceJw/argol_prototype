@@ -14,7 +14,7 @@ import Argol_Logo from '../../assets/Navbar/Logo.png'
 const Container = styled.div`
 display: flex;
 width: 100%;
-height: 100px;
+height: 110px;
 align-items: center;
 background-color: white;
 `
@@ -60,7 +60,7 @@ const Navbar = () => {
                 <Left>
                     <a href='/'><Logo src={Argol_Logo} alt='Argol Logo' /></a>
                     <Links href='/'>Home</Links>
-                    <Links href='/'>About Us</Links>
+                    <Links href='/about-us'>About Us</Links>
                     <Links href='/products' onClick={() => {
                         localStorage.setItem('selected-range', 'DeLuxe')
                     }}>Products</Links>

@@ -30,7 +30,7 @@ flex-direction: column;
 gap: 12px;
 width: 60%;
 max-width: 1100px;
-margin: 1.5rem auto 0rem;
+margin: 2.5rem auto 0rem;
 `
 
 const Range = styled.a`
@@ -46,14 +46,14 @@ font-weight: 600;
 
 const Quote = styled.div`
 text-align: center;
-margin-top: 2rem;
+margin-top: 3rem;
 font-size: 24px;
 letter-spacing: 1px;
 font-weight: 600;
 `
 
 const Categories = styled.div`
-margin-top: 0.5rem;
+margin-top: 3rem;
 text-align: center;
 font-size: 21px;
 font-weight: 500;
@@ -61,8 +61,8 @@ letter-spacing: 1px;
 `
 
 const FurstLogo = styled.img`
-width: 16%;
-margin-left: 10px;
+width: 18%;
+margin-left: 2px;
 `
 
 const LandingPage = () => {
@@ -115,6 +115,8 @@ const LandingPage = () => {
             <Categories>
                 <span>Paint Brushes <BsDot style={{verticalAlign: 'bottom'}}/> Paint Rollers <BsDot style={{verticalAlign: 'bottom'}}/> Painting Tools</span>
             </Categories>
+
+            <span></span>
         </Container>
     )   
 }
