@@ -4,9 +4,10 @@ import { BsDot } from 'react-icons/bs'
 
 
 const Container = styled.div`
-width: 70%;
+width: 80%;
 max-width: 1100px;
-margin: auto;
+margin: 0rem auto 3rem;
+height: 600px;
 `
 
 const Header = styled.div`
@@ -21,6 +22,7 @@ background: linear-gradient(to right, rgba(246, 185, 17, 0.9), rgba(228, 106, 30
 color: white;
 font-weight: 600;
 border-radius: 8px;
+margin-bottom: 3rem;
 `
 
 const Content = styled.div`
@@ -30,12 +32,14 @@ justify-content: space-between;
 `
 
 const ProductImage = styled.img`
-width: 55%;
+width: 50%;
+height: 50%;
+margin: auto;
 `
 
 const Description = styled.div`
-width: 40%;
-padding-top: 2rem;
+width: 45%;
+margin: auto;
 `
 
 const Details = styled.div`
@@ -43,17 +47,17 @@ display: flex;
 flex-direction: column;
 justify-content: space-between;
 margin-bottom: 1.5rem;
-height: 110px
+gap: 15px;
 `
 
 const Sizing = styled.table`
 width: 100%;
-height: 50%;
+height: auto;
 text-align: center;
 justify-self: auto;
 border-spacing: 0px;
-overflow-x: auto;
 border-collapse: collapse;
+overflow-x: auto;
 border: 2px solid black;
 `
 
@@ -67,9 +71,11 @@ const style = {
 
 const Product = (props) => {
 
+    
     useEffect(() => {
         document.title = 'Argol & Company Pte Ltd | Products'
     }, [])
+
 
     return (
         <Container>
@@ -79,7 +85,7 @@ const Product = (props) => {
 
             <Content>
                 {/* Product Image */}
-                <ProductImage src={props.data.image} />
+                <ProductImage style={{width: props.data.imageSize}} src={props.data.image} />
 
                 {/* Description (+ sizes) */}
                 <Description>
@@ -96,18 +102,18 @@ const Product = (props) => {
                     <Sizing>
                         <thead style={style.tableHead}>
                             <tr>
-                                <th style={{ border: '1px solid black', width: '30%' }}>Cat No.</th>
-                                <th style={{ border: '1px solid black', width: '20%'}}>Size</th>
+                                <th style={{ border: '1px solid black'}}>Cat No.</th>
+                                <th style={{ border: '1px solid black'}}>Size</th>
                                 <th>Quantity / Carton</th>
                             </tr>
                         </thead>
                         {props.data.sizing.map((data) => {
                             return (
-                                <tbody style={{ backgroundColor: data.background_color }}>
-                                    <tr >
-                                        <td style={{ border: '1px solid black' }}>{data.catNo}</td>
-                                        <td style={{ border: '1px solid black' }}>{data.size}</td>
-                                        <td style={{ border: '1px solid black' }}>{data.quantity}</td>
+                                <tbody style={{ backgroundColor: data.background_color}}>
+                                    <tr style={{height: '30px'}}>
+                                        <td style={{ border: '1px solid black'}}>{data.catNo}</td>
+                                        <td style={{ border: '1px solid black'}}>{data.size}</td>
+                                        <td style={{ border: '1px solid black'}}>{data.quantity}</td>
                                     </tr>
                                 </tbody>
                             )

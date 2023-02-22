@@ -2,14 +2,18 @@ import React, { useEffect, Fragment } from 'react'
 import styled from 'styled-components'
 
 import Navbar from '../Navbar/Navbar'
+import Footer from '../Footer/Footer'
 
 const Container = styled.div`
 width: 45%;
-margin: 1.6rem auto 0rem;
+margin: 1.4rem auto 2.2rem;
+padding: 1.5rem 2rem;
+border: 1px solid black;
+border-radius: 8px;
+background-color: white;
 `
 
 const Content = styled.p`
-word-spacing: 5px;
 text-align: justify;
 margin: 0px;
 margin: 0rem auto 1rem;
@@ -18,6 +22,18 @@ margin: 0rem auto 1rem;
 const Heading = styled.div`
 margin-bottom: 0.7rem;
 font-weight: 600;
+`
+
+const Page = styled.div`
+background-image: url(/BGImage.png);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+`
+
+const Tagline = styled.div`
+text-align: center;
+margin: 3.5rem auto 0.8rem;
 `
 
 
@@ -29,7 +45,7 @@ const AboutUs = () => {
     }, [])
 
     return (
-        <Fragment>
+        <Page>
             <Navbar />
             <Container>
                 <Heading style={{textTransform: 'uppercase', marginBottom: '1.6rem'}}>Proudly Singaporean since 2004</Heading>
@@ -60,8 +76,17 @@ const AboutUs = () => {
                 <Content>
                     As Argol's tagline: *Performance Focussed* / * Before you start, think of the finish*
                 </Content>
+
+
+                {/* Tagline */}
+                <Tagline>
+                    <Heading style={{fontSize: '17px'}}>Philosophy</Heading>
+                    <span style={{color: 'red', fontSize: '18px', fontWeight: 'bold'}}>We do not believe in "The Best" but only "The Better"</span>
+                </Tagline>
+
             </Container>
-        </Fragment>
+            <Footer />
+        </Page>
 
     )
 }

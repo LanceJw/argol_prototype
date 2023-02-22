@@ -3,7 +3,8 @@ export const Range_Data = [
         id: 'ContractorGrade',
         range: 'Contractor',
         color: 'black',
-        backgroundColor: '#fac867'
+        backgroundColor: '#fac867',
+        rangeSubValue: 'grade'
     },
     {
         id: 'DeLuxe',
