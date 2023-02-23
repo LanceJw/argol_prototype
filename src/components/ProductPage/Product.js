@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { BsDot } from 'react-icons/bs'
 
 
+
 const Container = styled.div`
 width: 80%;
 max-width: 1100px;

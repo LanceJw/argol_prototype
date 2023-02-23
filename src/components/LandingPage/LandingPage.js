@@ -27,16 +27,17 @@ const RangeContainer = styled.div`
 position: relative;
 display: flex;
 flex-direction: column;
+justify-content: center;
 gap: 12px;
-width: 60%;
+width: 32%;
 max-width: 1100px;
-margin: 1.5rem auto 0rem;
+margin: 2.5rem auto 0rem;
 `
 
 const Range = styled.a`
 padding: 8px 12px;
 background-color: red;
-width: 16%;
+width: 30%;
 text-align: center;
 border-radius: 8px;
 text-decoration: none;
@@ -46,14 +47,14 @@ font-weight: 600;
 
 const Quote = styled.div`
 text-align: center;
-margin-top: 2rem;
+margin-top: 3rem;
 font-size: 24px;
 letter-spacing: 1px;
 font-weight: 600;
 `
 
 const Categories = styled.div`
-margin-top: 0.8rem;
+margin-top: 3rem;
 text-align: center;
 font-size: 21px;
 font-weight: 500;
@@ -61,8 +62,8 @@ letter-spacing: 1px;
 `
 
 const FurstLogo = styled.img`
-width: 18%;
-margin-left: 2px;
+width: 30%;
+margin-left: 14px;
 `
 
 const LandingPage = () => {
@@ -107,7 +108,7 @@ const LandingPage = () => {
                             onClick={() => {
                                 // handler(data)
                                 localStorage.setItem('selected-range', data.id)
-                            }}>{data.range}</Range>
+                            }}>{data.range}<sub style={{fontSize: '12px', fontStyle: 'italic', fontWeight: 'bold'}}>{data.rangeSubValue}</sub></Range>
                             )
                         })}
                 <FurstLogo src={Furst} alt="Furst Logo "/>

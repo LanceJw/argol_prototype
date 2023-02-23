@@ -19,7 +19,7 @@ justify-content: space-between;
 `
 
 const Filter = styled.p`
-letter-spacing: 0.5px;
+letter-spacing: 0.3px;
 padding: 6px 12px;
 border-radius: 8px;
 cursor: pointer;
@@ -47,7 +47,8 @@ margin: 0rem auto 3rem;
 const style = {
     activeFilterStyle: {
         color: 'white',
-        fontWeight: 600
+        fontWeight: 600,
+        border: '1px solid'
     },
     inactiveFilterStyle: {
         border: '1px solid #c4c4c4',
@@ -114,7 +115,7 @@ const ProductPage = () => {
                             }} 
                             style={activeFilter === data.id ? {...style.activeFilterStyle, backgroundColor: data.backgroundColor} : style.inactiveFilterStyle}
                         >
-                            {data.range}<sub>{data.rangeSubValue}</sub>
+                            {data.range}<sub style={{fontSize: '12px', fontStyle: 'italic', fontWeight: 'bold'}}>{data.rangeSubValue}</sub>
                         </Filter>
                     )
                 })}
